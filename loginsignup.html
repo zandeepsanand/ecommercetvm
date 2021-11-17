@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Cart</title>
+  <title>Account</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -12,7 +12,7 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    /><link rel="stylesheet" href="product-details/cart.css">
+    /><link rel="stylesheet" href="product-details/loginsignup.css">
 
 </head>
 <body>
@@ -36,78 +36,37 @@
   </div>
 </div>
 
-<!-- cart items details -->
-
-<div class="small-container cart-page">
-  <table>
-    <tr>
-      <th>Product</th>
-      <th>Quantity</th>
-      <th>Subtotal</th>
-    </tr>
-
-    <tr>
-      <td>
-        <div class="cart-info">
-          <img src="https://i.ibb.co/B3vYjvw/buy-1.jpg" alt="" />
-          <div>
-            <p>Red Printed T-Shirt</p>
-            <small>Price ₹500.00</small>
-            <br />
-            <a href="#">Remove</a>
+<!-- Account page -->
+<div class="account-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <img src="https://www.pngall.com/wp-content/uploads/2016/07/Special-offer.png" alt="" width="100%" />
+      </div>
+      <div class="col-2">
+        <div class="form-container">
+          <div class="form-btn">
+            <span onclick="login()">Login</span>
+            <span onclick="register()">Register</span>
+            <hr id="Indicator" />
           </div>
-        </div>
-      </td>
-      <td><input type="number" value="1" /></td>
-      <td>₹500.00</td>
-    </tr>
-    <tr>
-      <td>
-        <div class="cart-info">
-          <img src="https://i.ibb.co/qmSHWx7/buy-2.jpg" alt="" />
-          <div>
-            <p>HRX Shoes</p>
-            <small>Price ₹1500.00</small>
-            <br />
-            <a href="#">Remove</a>
-          </div>
-        </div>
-      </td>
-      <td><input type="number" value="1" /></td>
-      <td>₹1500.00</td>
-    </tr>
-    <tr>
-      <td>
-        <div class="cart-info">
-          <img src="https://i.ibb.co/NyYtY31/buy-3.jpg" alt="" />
-          <div>
-            <p>Reebok Tracksuit</p>
-            <small>Price ₹1500.00</small>
-            <br />
-            <a href="#">Remove</a>
-          </div>
-        </div>
-      </td>
-      <td><input type="number" value="1" /></td>
-      <td>₹1500.00</td>
-    </tr>
-  </table>
 
-  <div class="total-price">
-    <table>
-      <tr>
-        <td>Subtotal</td>
-        <td>₹3500.00</td>
-      </tr>
-      <tr>
-        <td>Tax</td>
-        <td>₹15.00</td>
-      </tr>
-      <tr>
-        <td>Total</td>
-        <td>₹3515.00</td>
-      </tr>
-    </table>
+          <form action="" id="LoginForm">
+            <input type="text" name="" id="" placeholder="Username" />
+            <input type="password" name="" id="" placeholder="Password" />
+            <button type="submit" class="btn">Login</button>
+            <a href="#">Forgot password</a>
+          </form>
+
+          <form action="" id="RegForm">
+            <input type="text" name="" id="" placeholder="Username" />
+            <input type="email" name="" id="" placeholder="Email" />
+            <input type="password" name="" id="" placeholder="Password" />
+            <button type="submit" class="btn">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -117,7 +76,7 @@
     <div class="row">
       <div class="footer-col-1">
         <h3>Contact Us</h3>
-        <p>Lorem ipsum</p>
+        <p></p>
         <div class="app-logo">
           <img src="https://i.ibb.co/KbPTYYQ/play-store.png" alt="" />
           <img src="https://i.ibb.co/hVM4X2p/app-store.png" alt="" />
@@ -153,10 +112,11 @@
       </div>
     </div>
     <hr />
-    <p class="copyright">Copyright &copy; 2021 - Sandeep S Anand</p>
+    <p class="copyright">Copyright &copy; Sandeep S Anand</p>
   </div>
 </div>
 
+<!-- js for toggle menu -->
 <script>
   var MenuItems = document.getElementById('MenuItems');
   MenuItems.style.maxHeight = '0px';
@@ -167,6 +127,25 @@
     } else {
       MenuItems.style.maxHeight = '0px';
     }
+  }
+</script>
+
+<!-- js for toggle form -->
+<script>
+  var LoginForm = document.getElementById('LoginForm');
+  var RegForm = document.getElementById('RegForm');
+  var Indicator = document.getElementById('Indicator');
+
+  function register() {
+    RegForm.style.transform = 'translateX(0px)';
+    LoginForm.style.transform = 'translateX(0px)';
+    Indicator.style.transform = 'translateX(100px)';
+  }
+
+  function login() {
+    RegForm.style.transform = 'translateX(300px)';
+    LoginForm.style.transform = 'translateX(300px)';
+    Indicator.style.transform = 'translateX(0px)';
   }
 </script>
 <!-- partial -->
